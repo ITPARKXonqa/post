@@ -15,3 +15,9 @@ class PoliticPageView(ListView):
 class NewsDetailView(DetailView):  
     model = Post
     template_name = 'news_detail.html'  
+
+class LoginPageView(TemplateView):
+    template_name = 'login.html'   
+   
+class RegisterPageView(TemplateView):
+    template_name = 'register.html'       
