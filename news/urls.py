@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import (
     HomePageView, 
-    PoliticPageView, 
+    CategoryPageListView, 
     NewsDetailView, 
     LoginPageView, 
     RegisterPageView
@@ -9,7 +9,7 @@ from .views import (
 
 urlpatterns = [
     path('',HomePageView.as_view(), name='home'),
-    path('politics/', PoliticPageView.as_view(), name='politics'),
+    path('category/<slug:slug>', CategoryPageListView.as_view(), name='category_posts'),
     path('news_detail/<int:pk>',NewsDetailView.as_view(), name='news_detail'),
     path('login/',LoginPageView.as_view(), name='login'),
     path('register/',RegisterPageView.as_view(), name='register')

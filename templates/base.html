@@ -85,18 +85,18 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link dropdown-toggle" href="{% url 'politics' %}" title="Visit home page">
+								<a class="nav-link dropdown-toggle" href="{% url 'category_posts' slug='politics' %}" title="Visit home page">
 									Politics
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link dropdown-toggle" href="sports.html" title="Visit home page">
+								<a class="nav-link dropdown-toggle" href="{% url 'category_posts' slug='sports' %}" title="Visit home page">
 									Sports
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a class="nav-link dropdown-toggle" href="travel.html" title="Visit home page">
+								<a class="nav-link dropdown-toggle" href="{% url 'category_posts' slug='travel' %}" title="Visit home page">
 									Travel
 								</a>
 							</li>
@@ -104,7 +104,7 @@
 							<li class="nav-item dropdown drop_border">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 									data-bs-toggle="dropdown" aria-expanded="false">
-									News<img src="image/icons-svg/chevron-down.svg" width="15" height="15"
+									News<img src="{% static 'image/icons-svg/chevron-down.svg' %}" width="15" height="15"
 										alt="Submenu open/close icon">
 								</a>
 								<ul class="dropdown-menu drop_1 shadow" aria-labelledby="navbarDropdown">
@@ -117,7 +117,7 @@
 							<li class="nav-item dropdown drop_border">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
 									aria-expanded="false" title="Click to see Blogs category">
-									Popular News<img src="image/icons-svg/chevron-down.svg" width="15" height="15"
+									Popular News<img src="{% static 'image/icons-svg/chevron-down.svg'%}" width="15" height="15"
 										alt="Submenu open/close icon"></a>
 								<ul class="dropdown-menu shadow drop_1 shadow">
 									<li><a class="dropdown-item" href="travel.html">Trending</a></li>
@@ -125,7 +125,7 @@
 									<li class="dropdown-submenu dropend">
 										<a class="dropdown-item dropdown-toggle border-0"
 											href="javascript:void(0);">Sports <img
-												src="image/icons-svg/chevron-right.svg" width="15" height="15"></a>
+												src="{% static 'image/icons-svg/chevron-right.svg'%}" width="15" height="15"></a>
 										<ul class="dropdown-menu">
 											<li>
 												<a class="dropdown-item" href="sports.html">Latest</a>
@@ -139,7 +139,7 @@
 									<li class="dropdown-submenu dropend">
 										<a class="dropdown-item dropdown-toggle border-0"
 											href="javascript:void(0);">Travel <img
-												src="image/icons-svg/chevron-right.svg" width="15" height="15"></a>
+												src="{% static 'image/icons-svg/chevron-right.svg '%}" width="15" height="15"></a>
 										<ul class="dropdown-menu">
 											<li>
 												<a class="dropdown-item" href="travel.html">Places</a>
@@ -152,7 +152,7 @@
 									<li class="dropdown-submenu dropend">
 										<a class="dropdown-item dropdown-toggle border-0"
 											href="javascript:void(0);">Politics <img
-												src="image/icons-svg/chevron-right.svg" width="15" height="15"></a>
+												src="{% static 'image/icons-svg/chevron-right.svg' %}" width="15" height="15"></a>
 										<ul class="dropdown-menu">
 											<li>
 												<a class="dropdown-item border-0" href="politics.html">World News</a>
@@ -162,7 +162,7 @@
 									<li class="dropdown-submenu dropend">
 										<a class="dropdown-item dropdown-toggle border-0"
 											href="javascript:void(0);">Other <img
-												src="image/icons-svg/chevron-right.svg" width="15" height="15"></a>
+												src="{% static 'image/icons-svg/chevron-right.svg' %}" width="15" height="15"></a>
 										<ul class="dropdown-menu">
 											<li>
 												<a class="dropdown-item border-0" href="sports.html">Top Rated</a>
@@ -181,7 +181,7 @@
 							<li class="nav-item dropdown drop_border">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 									data-bs-toggle="dropdown" aria-expanded="false">
-									Pages<img src="image/icons-svg/chevron-down.svg" width="15" height="15"
+									Pages<img src="{% static 'image/icons-svg/chevron-down.svg' %}" width="15" height="15"
 										alt="Submenu open/close icon">
 								</a>
 								<ul class="dropdown-menu drop_1 shadow" aria-labelledby="navbarDropdown">
