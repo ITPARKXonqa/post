@@ -100,20 +100,11 @@
 									Travel
 								</a>
 							</li>
-
-							<li class="nav-item dropdown drop_border">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-									data-bs-toggle="dropdown" aria-expanded="false">
-									News<img src="{% static 'image/icons-svg/chevron-down.svg' %}" width="15" height="15"
-										alt="Submenu open/close icon">
+							<li class="nav-item">
+								<a class="nav-link dropdown-toggle" href="{% url 'category_posts' slug='business' %}" title="Visit home page">
+									Business
 								</a>
-								<ul class="dropdown-menu drop_1 shadow" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item" href="news.html"> News</a></li>
-									<li><a class="dropdown-item border-0" href="news_detail.html"> News Detail</a></li>
-								</ul>
 							</li>
-
-
 							<li class="nav-item dropdown drop_border">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
 									aria-expanded="false" title="Click to see Blogs category">
