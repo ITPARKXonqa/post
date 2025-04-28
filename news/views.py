@@ -1,6 +1,12 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView
 from .models import Post, Category
+
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import LoginView, LogoutView
+from .forms import CustomUserCreationForm
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -51,8 +57,26 @@ class NewsDetailView(DetailView):
         context['post_lens'] = data
         return context
 
-class LoginPageView(TemplateView):
-    template_name = 'login.html'   
-   
-class RegisterPageView(TemplateView):
-    template_name = 'register.html'       
+# Ro'yxatdan o'tish uchun view
+class RegisterView(CreateView):
+    form_class = CustomUserCreationForm
+    template_name = 'register.html'
+    success_url = '/login/'
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect(self.success_url)
+
+# Tizimga kirish uchun view
+class CustomLoginView(LoginView):
+    template_name = 'login.html'
+
+# Tizimdan chiqish uchun view
+class CustomLogoutView(LogoutView):
+    next_page = '/'
+    
+@login_required
+def news_list(request):
+    # Yangiliklarni chiqarish logikasi
+    return render(request, 'home.html')    

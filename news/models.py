@@ -29,6 +29,7 @@ class Post(models.Model):
         null=True, 
         blank=True
     )
+    image = models.ImageField(upload_to='post_images/', null=True, blank=True)  # Rasm maydoni
     
     def __str__(self):
         return self.title

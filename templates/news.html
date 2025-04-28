@@ -35,8 +35,13 @@
             <div class="col-md-5 col-sm-5">
               <div class="trend_2_in position-relative">
                 <div class="trend_2_in1">
-                  <a href="{% url 'news_detail' post.id %}"><img src="{% static 'image/44.jpg' %}"
-                      class="img-fluid" alt="abc" /></a>
+                  <a href="{% url 'news_detail' post.id %}">
+                    {% if post.image %}
+                      <img src="{{ post.image.url }}" class="img-fluid" alt="abc" />
+                    {% else %}  
+                      <img src="{% static 'image/44.jpg' %}" class="img-fluid" alt="abc" />
+                    {% endif %}  
+                  </a>
                 </div>
                 <div class="trend_2_in2 position-absolute top-0 p-2">
                   <b
